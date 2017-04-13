@@ -5,7 +5,7 @@
 	<artifactId>xerp</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bootstrap Maven Webapp</name>
+	<name>MavenWebapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -213,7 +213,7 @@
 		
 	</dependencies>
 	<build>
-    	<finalName>bootstrap</finalName>
+    	<finalName>xerp</finalName>
     	<resources>
 			<resource>
 				<directory>src/main/java</directory>

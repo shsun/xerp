@@ -52,11 +52,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.5.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>4.1.5.RELEASE</version>
 		</dependency>
@@ -129,12 +124,6 @@
 			<version>18.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.3</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.1</version>
@@ -203,18 +192,26 @@
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-
+		<!-- 	
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
 			<version>2.3.22</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>com.github.jsqlparser</groupId>
 			<artifactId>jsqlparser</artifactId>
 			<version>0.9.3</version>
 		</dependency>
-
+		<!--
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>rt</artifactId>
+			<scope>system</scope>
+			<systemPath>${env.JAVA_HOME}/jre/lib/rt.jar</systemPath>
+		</dependency>
+		-->
 	</dependencies>
 	<build>
 		<finalName>xerp</finalName>
@@ -247,12 +244,14 @@
 					<source>1.7</source>
 					<target>1.7</target>
 					<encoding>UTF-8</encoding>
+					<compilerArgument>-XDignore.symbol.file</compilerArgument>
+					<compilerArguments>
+						<extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
+					</compilerArguments>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
-
 	<repositories>
 		<repository>
 			<id>nexus-aliyun</id>
@@ -300,6 +299,7 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>
+		<!-- 
 		<repository>
 			<id>glassfish</id>
 			<name>Glassfish repository</name>
@@ -312,6 +312,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		-->
 		<repository>
 			<id>apache.snapshots</id>
 			<name>Apache Snapshot Repository</name>

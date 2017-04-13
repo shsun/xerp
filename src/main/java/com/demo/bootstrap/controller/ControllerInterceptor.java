@@ -15,9 +15,10 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ac.util.AjaxOut;
-import com.ac.util.SessionUtil;
 import com.google.common.collect.Lists;
+
+import base.utils.AjaxOut;
+import base.utils.SessionUtil;
 
 public class ControllerInterceptor implements HandlerInterceptor {
 

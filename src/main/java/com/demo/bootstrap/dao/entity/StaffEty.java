@@ -2,8 +2,7 @@ package com.demo.bootstrap.dao.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-
-import com.ac.base.dao.BaseEntity;
+import base.dao.BaseEntity;
 
 public class StaffEty extends BaseEntity {
 	private Integer id;	//ID

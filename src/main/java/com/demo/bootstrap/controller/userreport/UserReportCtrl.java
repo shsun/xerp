@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.ac.util.jsonresult.JsonResult;
-import com.ac.util.jsonresult.JsonResultFactory;
-
-
 import com.demo.bootstrap.controller.userreport.UserReportForm;
 import com.demo.bootstrap.controller.userreport.UserReportBean;
 import com.demo.bootstrap.dao.mapper.module.UserReportMapper;
+
+import base.utils.json.JsonResult;
+import base.utils.json.JsonResultFactory;
 
 /**
  * 员工报表

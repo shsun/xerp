@@ -1,4 +1,4 @@
-package com.ac.util.jsonresult;
+package base.utils.json;
 
 public class JsonResultSuccess<T> implements JsonResult {
 public T data;

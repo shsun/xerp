@@ -1,4 +1,4 @@
-package com.ac.util.jsonresult;
+package base.utils.json;
 
 import java.util.List;
 

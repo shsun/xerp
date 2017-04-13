@@ -1,4 +1,4 @@
-package com.ac.util;
+package base.utils;
 
 import java.io.Serializable;
 import java.util.regex.Pattern;

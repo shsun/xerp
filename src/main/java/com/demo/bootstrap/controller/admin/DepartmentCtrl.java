@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.ac.util.jsonresult.JsonResult;
-import com.ac.util.jsonresult.JsonResultFactory;
-
-
 import com.demo.bootstrap.dao.entity.DepartmentEty;
 import com.demo.bootstrap.dao.mapper.base.DepartmentMapper;
+
+import base.utils.json.JsonResult;
+import base.utils.json.JsonResultFactory;
 
 /**
  * 部门管理

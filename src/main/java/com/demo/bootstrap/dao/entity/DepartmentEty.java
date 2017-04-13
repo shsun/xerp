@@ -1,6 +1,6 @@
 package com.demo.bootstrap.dao.entity;
 
-import com.ac.base.dao.BaseEntity;
+import base.dao.BaseEntity;
 
 public class DepartmentEty extends BaseEntity {
 	private Integer id;	//部门ID

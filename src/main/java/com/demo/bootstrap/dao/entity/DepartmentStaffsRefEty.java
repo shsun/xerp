@@ -1,6 +1,6 @@
 package com.demo.bootstrap.dao.entity;
 
-import com.ac.base.dao.BaseEntity;
+import base.dao.BaseEntity;
 
 public class DepartmentStaffsRefEty extends BaseEntity {
 	private Integer iD;	//ID

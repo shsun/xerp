@@ -1,5 +1,5 @@
-package com.ac.base.dao;
-import com.ac.util.ExtLimit;
+package base.dao;
+import base.utils.ExtLimit;
 
 public class BaseEntity {
 	

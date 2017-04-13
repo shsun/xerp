@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-import com.ac.util.SessionUtil;
-import com.ac.util.jsonresult.JsonResult;
-import com.ac.util.jsonresult.JsonResultFactory;
+import base.utils.SessionUtil;
+import base.utils.json.JsonResult;
+import base.utils.json.JsonResultFactory;
 
 @Controller
 public class AppCtrl {

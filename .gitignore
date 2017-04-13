@@ -3,3 +3,4 @@
 .project
 target
 logs
+src/main/webapp/WEB-INF/classes

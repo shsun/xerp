@@ -1,4 +1,4 @@
-package com.demo.bootstrap.controller.userreport;
+package com.xerp.controller.userreport;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.ac.util.jsonresult.JsonResult;
 import com.ac.util.jsonresult.JsonResultFactory;
-
-
-import com.demo.bootstrap.controller.userreport.UserReportForm;
-import com.demo.bootstrap.controller.userreport.UserReportBean;
-import com.demo.bootstrap.dao.mapper.module.UserReportMapper;
+import com.xerp.controller.userreport.UserReportBean;
+import com.xerp.controller.userreport.UserReportForm;
+import com.xerp.dao.mapper.module.UserReportMapper;
 
 /**
  * 员工报表

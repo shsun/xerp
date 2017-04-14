@@ -1,8 +1,9 @@
-package com.demo.bootstrap.dao.mapper.module;
+package com.xerp.dao.mapper.module;
 
-import com.demo.bootstrap.controller.userreport.UserReportBean;
-import com.demo.bootstrap.controller.userreport.UserReportForm;
 import java.util.List;
+
+import com.xerp.controller.userreport.UserReportBean;
+import com.xerp.controller.userreport.UserReportForm;
 
 public interface UserReportMapper {
 

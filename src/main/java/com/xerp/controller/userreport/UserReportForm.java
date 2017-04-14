@@ -1,4 +1,4 @@
-package com.demo.bootstrap.controller.userreport;
+package com.xerp.controller.userreport;
 public class UserReportForm extends com.ac.base.dao.BaseEntity {
 	private Integer id;	//ID
 	private String name;	//员工名称

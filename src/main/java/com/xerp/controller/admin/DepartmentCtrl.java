@@ -1,4 +1,4 @@
-package com.demo.bootstrap.controller.admin;
+package com.xerp.controller.admin;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,29 +10,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.ac.util.jsonresult.JsonResult;
 import com.ac.util.jsonresult.JsonResultFactory;
-
-
-import com.demo.bootstrap.dao.entity.StaffEty;
-import com.demo.bootstrap.dao.mapper.base.StaffMapper;
+import com.xerp.dao.entity.DepartmentEty;
+import com.xerp.dao.mapper.base.DepartmentMapper;
 
 /**
- * 员工管理
+ * 部门管理
  */
 @Controller
-@RequestMapping("/admin/StaffCtrl/")
-public class StaffCtrl {
+@RequestMapping("/admin/DepartmentCtrl/")
+public class DepartmentCtrl {
 
 	@Autowired
-	private StaffMapper staffMapper;
+	private DepartmentMapper departmentMapper;
 	
 	
 	/**
 	 * 查询
 	 */
 	@RequestMapping(value="search")
-	public @ResponseBody JsonResult search(@RequestBody StaffEty staffEty) throws Exception {
-		int count = staffMapper.selectLimitCount(staffEty);
-		List<StaffEty> list = staffMapper.selectByLimit(staffEty);
+	public @ResponseBody JsonResult search(@RequestBody DepartmentEty departmentEty) throws Exception {
+		int count = departmentMapper.selectLimitCount(departmentEty);
+		List<DepartmentEty> list = departmentMapper.selectByLimit(departmentEty);
 		return JsonResultFactory.extgrid(list, count);
 	}
 	
@@ -40,12 +38,12 @@ public class StaffCtrl {
 	 * 保存
 	 */
 	@RequestMapping(value="save")
-	public @ResponseBody JsonResult save(@RequestBody StaffEty staffEty) throws Exception {
-		if(staffEty.getId() == null) {
-			staffMapper.insert(staffEty);
+	public @ResponseBody JsonResult save(@RequestBody DepartmentEty departmentEty) throws Exception {
+		if(departmentEty.getId() == null) {
+			departmentMapper.insert(departmentEty);
 		}
 		else {
-			staffMapper.updateById(staffEty);
+			departmentMapper.updateById(departmentEty);
 		}
 		return JsonResultFactory.success();
 	}
@@ -55,7 +53,7 @@ public class StaffCtrl {
 	 */
 	@RequestMapping(value="delete")
 	public @ResponseBody JsonResult delete(@RequestParam("id") int id) {
-		staffMapper.deleteById(id);
+		departmentMapper.deleteById(id);
 		return JsonResultFactory.success();
 	}
 	
@@ -64,8 +62,8 @@ public class StaffCtrl {
 	 */
 	@RequestMapping(value="getDetailInfo")
 	public @ResponseBody JsonResult getDetailInfo(@RequestParam("id") int id) throws Exception {
-		StaffEty staffEty = staffMapper.selectById(id);
-		return JsonResultFactory.success(staffEty);
+		DepartmentEty departmentEty = departmentMapper.selectById(id);
+		return JsonResultFactory.success(departmentEty);
 	}
 	
 }

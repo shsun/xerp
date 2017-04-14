@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.xerp.dao.entity.StaffEty;
 import com.xerp.dao.mapper.base.StaffMapper;
-import com.xerp.pojo.PojoStaff;
-import com.xerp.pojo.PojoStaffExample;
-import com.xerp.pojo.PojoStaffMapper;
 
 import base.utils.json.IJsonResult;
 import base.utils.json.JsonResultFactory;
@@ -27,32 +24,17 @@ public class StaffCtrl {
 	@Autowired
 	private StaffMapper staffMapper;
 
-	@Autowired
-	private PojoStaffMapper pojoStaffMapper;
-
 	/**
 	 * 查询
 	 */
-	/*
 	@RequestMapping(value = "search")
 	public @ResponseBody IJsonResult search(@RequestBody StaffEty staffEty) throws Exception {
-		// int count = staffMapper.selectLimitCount(staffEty);
-		// List<StaffEty> list = staffMapper.selectByLimit(staffEty);
-		// return JsonResultFactory.extgrid(list, count);
-
-		
-		PojoStaff ab;
-		
-		PojoStaffExample example = new PojoStaffExample();
-		int count = pojoStaffMapper.countByExample(example);
-		PojoStaffExample.Criteria criteria = example.createCriteria();
-		criteria.andNameEqualTo(staffEty.getName());
-		criteria.andNameIsNotNull();
-		List<PojoStaff> list = pojoStaffMapper.selectByExample(example);
-		return JsonResultFactory.extgrid(list, count);
+		 int count = staffMapper.selectLimitCount(staffEty);
+		 List<StaffEty> list = staffMapper.selectByLimit(staffEty);
+		 return JsonResultFactory.extgrid(list, count);
 	}
-	*/
 	
+	/*
 	@RequestMapping(value = "search")
 	public @ResponseBody IJsonResult search(@RequestBody PojoStaff staffEty) throws Exception {		
 		PojoStaffExample example = new PojoStaffExample();
@@ -63,7 +45,7 @@ public class StaffCtrl {
 		List<PojoStaff> list = pojoStaffMapper.selectByExample(example);
 		return JsonResultFactory.extgrid(list, count);
 	}
-	
+	*/
 	
 	/**
 	 * 保存

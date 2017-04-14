@@ -105,6 +105,7 @@
 				</nav>
 			</header>
 			<aside ng-show="isLeftNavShow()" class="main-sidebar" ng-class="{'leftNavMin':isToggleNavMin,'leftNavLockDiv':!isToggleNavMin}" ng-style="sideBodyStyle" >
+				<!--
 				<div class="user-panel">
 					<div class="pull-left image">
 						<img alt="" class="img-circle" src="${ctx}/resources/images/ac.ico">
@@ -114,6 +115,8 @@
 						<p>autocoding@163.com</p>
 					</div>
 				</div>
+				-->
+				
 				<div ng-style="sideMenuStyle" style="overflow-y: auto;overflow-x: hidden">
 					<ul class="docs-menu">
 						<li style="cursor: pointer;" ng-repeat="menu in menu.menus" ng-class="{'childActive' : isSectionSelected(menu)}">

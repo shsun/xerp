@@ -1,17 +1,23 @@
 package base.utils.json;
 
-public class JsonResultError implements JsonResult {
-	
+/**
+ * 
+ * @author shsun
+ *
+ */
+public class JsonResultError implements IJsonResult {
+
 	private String info = "";
 	private String result = "error";
 	private boolean success = true;
-	
-	public JsonResultError() {}
-	
+
+	public JsonResultError() {
+	}
+
 	public JsonResultError(String info) {
 		this.info = info;
 	}
-	
+
 	public String getResult() {
 		return result;
 	}

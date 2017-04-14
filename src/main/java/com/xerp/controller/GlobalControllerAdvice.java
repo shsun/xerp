@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 import base.utils.AjaxOut;
-import base.utils.json.JsonResult;
+import base.utils.json.IJsonResult;
 import base.utils.json.JsonResultFactory;
 
 @ControllerAdvice
@@ -27,7 +27,7 @@ public class GlobalControllerAdvice {
 	public @ResponseBody void handle(Exception e, HttpServletResponse response) {
 		logger.error(e.getMessage(), e);
 
-		JsonResult re = JsonResultFactory.error(e.getMessage());
+		IJsonResult re = JsonResultFactory.error(e.getMessage());
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = "";
 		try {

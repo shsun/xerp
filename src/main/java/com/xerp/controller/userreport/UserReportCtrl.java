@@ -12,7 +12,7 @@ import com.xerp.controller.userreport.UserReportBean;
 import com.xerp.controller.userreport.UserReportForm;
 import com.xerp.dao.mapper.module.UserReportMapper;
 
-import base.utils.json.JsonResult;
+import base.utils.json.IJsonResult;
 import base.utils.json.JsonResultFactory;
 
 /**
@@ -30,7 +30,7 @@ public class UserReportCtrl {
 	 * 查询
 	 */
 	@RequestMapping(value="search")
-	public @ResponseBody JsonResult search(@RequestBody UserReportForm userReportForm) throws Exception {
+	public @ResponseBody IJsonResult search(@RequestBody UserReportForm userReportForm) throws Exception {
 		int count = userReportMapper.selectUserReportBeanCount(userReportForm);
 		List<UserReportBean> list = userReportMapper.selectUserReportBeanByLimit(userReportForm);
 		return JsonResultFactory.extgrid(list, count);

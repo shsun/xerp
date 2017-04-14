@@ -1,5 +1,11 @@
 #!/bin/bash
 
+
+
+rm -rfv ${TOMCAT_HOME}/webapps/*;
+
+mvn clean package;
+
 echo "copy war to webapps"
 cp -rfv ./target/*.war ${TOMCAT_HOME}/webapps;
 

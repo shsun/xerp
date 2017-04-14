@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.xerp.dao.entity.StaffEty;
 import com.xerp.dao.mapper.base.StaffMapper;
 
-import base.utils.json.JsonResult;
+import base.utils.json.IJsonResult;
 import base.utils.json.JsonResultFactory;
 
 /**
@@ -29,7 +29,7 @@ public class StaffCtrl {
 	 * 查询
 	 */
 	@RequestMapping(value="search")
-	public @ResponseBody JsonResult search(@RequestBody StaffEty staffEty) throws Exception {
+	public @ResponseBody IJsonResult search(@RequestBody StaffEty staffEty) throws Exception {
 		int count = staffMapper.selectLimitCount(staffEty);
 		List<StaffEty> list = staffMapper.selectByLimit(staffEty);
 		return JsonResultFactory.extgrid(list, count);
@@ -39,7 +39,7 @@ public class StaffCtrl {
 	 * 保存
 	 */
 	@RequestMapping(value="save")
-	public @ResponseBody JsonResult save(@RequestBody StaffEty staffEty) throws Exception {
+	public @ResponseBody IJsonResult save(@RequestBody StaffEty staffEty) throws Exception {
 		if(staffEty.getId() == null) {
 			staffMapper.insert(staffEty);
 		}
@@ -53,7 +53,7 @@ public class StaffCtrl {
 	 * 删除
 	 */
 	@RequestMapping(value="delete")
-	public @ResponseBody JsonResult delete(@RequestParam("id") int id) {
+	public @ResponseBody IJsonResult delete(@RequestParam("id") int id) {
 		staffMapper.deleteById(id);
 		return JsonResultFactory.success();
 	}
@@ -62,7 +62,7 @@ public class StaffCtrl {
 	 * 得到详细信息
 	 */
 	@RequestMapping(value="getDetailInfo")
-	public @ResponseBody JsonResult getDetailInfo(@RequestParam("id") int id) throws Exception {
+	public @ResponseBody IJsonResult getDetailInfo(@RequestParam("id") int id) throws Exception {
 		StaffEty staffEty = staffMapper.selectById(id);
 		return JsonResultFactory.success(staffEty);
 	}

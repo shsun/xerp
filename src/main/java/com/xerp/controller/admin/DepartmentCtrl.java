@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.xerp.dao.entity.DepartmentEty;
 import com.xerp.dao.mapper.base.DepartmentMapper;
 
-import base.utils.json.JsonResult;
+import base.utils.json.IJsonResult;
 import base.utils.json.JsonResultFactory;
 
 /**
@@ -29,7 +29,7 @@ public class DepartmentCtrl {
 	 * 查询
 	 */
 	@RequestMapping(value="search")
-	public @ResponseBody JsonResult search(@RequestBody DepartmentEty departmentEty) throws Exception {
+	public @ResponseBody IJsonResult search(@RequestBody DepartmentEty departmentEty) throws Exception {
 		int count = departmentMapper.selectLimitCount(departmentEty);
 		List<DepartmentEty> list = departmentMapper.selectByLimit(departmentEty);
 		return JsonResultFactory.extgrid(list, count);
@@ -39,7 +39,7 @@ public class DepartmentCtrl {
 	 * 保存
 	 */
 	@RequestMapping(value="save")
-	public @ResponseBody JsonResult save(@RequestBody DepartmentEty departmentEty) throws Exception {
+	public @ResponseBody IJsonResult save(@RequestBody DepartmentEty departmentEty) throws Exception {
 		if(departmentEty.getId() == null) {
 			departmentMapper.insert(departmentEty);
 		}
@@ -53,7 +53,7 @@ public class DepartmentCtrl {
 	 * 删除
 	 */
 	@RequestMapping(value="delete")
-	public @ResponseBody JsonResult delete(@RequestParam("id") int id) {
+	public @ResponseBody IJsonResult delete(@RequestParam("id") int id) {
 		departmentMapper.deleteById(id);
 		return JsonResultFactory.success();
 	}
@@ -62,7 +62,7 @@ public class DepartmentCtrl {
 	 * 得到详细信息
 	 */
 	@RequestMapping(value="getDetailInfo")
-	public @ResponseBody JsonResult getDetailInfo(@RequestParam("id") int id) throws Exception {
+	public @ResponseBody IJsonResult getDetailInfo(@RequestParam("id") int id) throws Exception {
 		DepartmentEty departmentEty = departmentMapper.selectById(id);
 		return JsonResultFactory.success(departmentEty);
 	}

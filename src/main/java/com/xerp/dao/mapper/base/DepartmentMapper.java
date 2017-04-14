@@ -2,7 +2,7 @@ package com.xerp.dao.mapper.base;
 
 import com.xerp.dao.entity.DepartmentEty;
 
-import base.dao.BaseMapper;
+import base.dao.IBaseMapper;
 
-public interface DepartmentMapper extends BaseMapper<DepartmentEty> {
+public interface DepartmentMapper extends IBaseMapper<DepartmentEty> {
 }

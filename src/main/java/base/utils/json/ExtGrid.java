@@ -2,32 +2,42 @@ package base.utils.json;
 
 import java.util.List;
 
-public class ExtGrid<T> implements JsonResult {
-	private List<T> invdata;
+/**
+ * 
+ * @author shsun
+ *
+ * @param <T>
+ */
+public class ExtGrid<T> implements IJsonResult {
+
+	private List<T> mData;
 	private int total;
-	
+
 	public ExtGrid() {
 	}
-	
-	public ExtGrid(List<T> invdata) {
-		this.invdata = invdata;
-		this.total = invdata.size();
+
+	public ExtGrid(List<T> data) {
+		this.mData = data;
+		this.total = data.size();
 	}
-	
-	public ExtGrid(List<T> invdata, int total) {
-		this.invdata = invdata;
+
+	public ExtGrid(List<T> data, int total) {
+		this.mData = data;
 		this.total = total;
 	}
-	
-	public List<T> getInvdata() {
-		return invdata;
+
+	public List<T> getData() {
+		return mData;
 	}
-	public void setInvdata(List<T> invdata) {
-		this.invdata = invdata;
+
+	public void setData(List<T> data) {
+		this.mData = data;
 	}
+
 	public int getTotal() {
 		return total;
 	}
+
 	public void setTotal(int total) {
 		this.total = total;
 	}

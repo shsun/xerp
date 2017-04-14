@@ -1,4 +1,4 @@
-package com.xerp.dao.tables;
+package com.xerp.pojo;
 
 import java.util.Date;
 

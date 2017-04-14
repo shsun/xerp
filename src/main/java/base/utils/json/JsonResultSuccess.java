@@ -6,7 +6,7 @@ package base.utils.json;
  *
  * @param <T>
  */
-public class JsonResultSuccess<T> implements IJsonResult {
+public class JsonResultSuccess<T> implements JsonResult {
 	public T data;
 
 	private String result = "success";

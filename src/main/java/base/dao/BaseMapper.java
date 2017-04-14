@@ -7,7 +7,7 @@ import java.util.List;
  * 
  *
  */
-public interface IBaseMapper<T> {
+public interface BaseMapper<T> {
 
 	/**
 	 * 插入

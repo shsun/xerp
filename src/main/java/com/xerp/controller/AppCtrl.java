@@ -14,14 +14,14 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import base.utils.SessionUtil;
-import base.utils.json.IJsonResult;
+import base.utils.json.JsonResult;
 import base.utils.json.JsonResultFactory;
 
 @Controller
 public class AppCtrl {
 	
 	@RequestMapping(value="/sys/login")
-	public @ResponseBody IJsonResult login(@RequestBody Map<String, String> paraMap) {
+	public @ResponseBody JsonResult login(@RequestBody Map<String, String> paraMap) {
 		String userNmae = paraMap.get("username");
 		SessionUtil.login(userNmae);
 		return JsonResultFactory.success();

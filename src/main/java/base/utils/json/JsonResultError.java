@@ -5,7 +5,7 @@ package base.utils.json;
  * @author shsun
  *
  */
-public class JsonResultError implements IJsonResult {
+public class JsonResultError implements JsonResult {
 
 	private String info = "";
 	private String result = "error";

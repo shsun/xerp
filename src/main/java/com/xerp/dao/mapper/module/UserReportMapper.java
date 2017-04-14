@@ -1,9 +1,8 @@
 package com.xerp.dao.mapper.module;
 
-import java.util.List;
-
 import com.xerp.controller.userreport.UserReportBean;
 import com.xerp.controller.userreport.UserReportForm;
+import java.util.List;
 
 public interface UserReportMapper {
 

@@ -5,6 +5,6 @@ package base.utils.json;
  * @author shsun
  *
  */
-public interface IJsonResult {
+public interface JsonResult {
 
 }

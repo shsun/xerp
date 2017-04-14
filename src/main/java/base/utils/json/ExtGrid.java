@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @param <T>
  */
-public class ExtGrid<T> implements IJsonResult {
+public class ExtGrid<T> implements JsonResult {
 
 	private List<T> mData;
 	private int total;

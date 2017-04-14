@@ -1,4 +1,4 @@
-package com.xerp.dao.pojo;
+package com.xerp.dao.tables;
 
 import java.util.ArrayList;
 import java.util.List;

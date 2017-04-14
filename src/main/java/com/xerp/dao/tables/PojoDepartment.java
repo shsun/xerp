@@ -1,4 +1,4 @@
-package com.xerp.dao.pojo;
+package com.xerp.dao.tables;
 
 public class PojoDepartment {
     private Integer id;

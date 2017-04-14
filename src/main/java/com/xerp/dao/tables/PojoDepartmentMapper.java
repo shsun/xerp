@@ -1,7 +1,7 @@
-package com.xerp.dao.pojo;
+package com.xerp.dao.tables;
 
-import com.xerp.dao.pojo.PojoDepartment;
-import com.xerp.dao.pojo.PojoDepartmentExample;
+import com.xerp.dao.tables.PojoDepartment;
+import com.xerp.dao.tables.PojoDepartmentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
-package com.xerp.dao.pojo;
+package com.xerp.dao.tables;
 
-import com.xerp.dao.pojo.PojoStaff;
-import com.xerp.dao.pojo.PojoStaffExample;
+import com.xerp.dao.tables.PojoStaff;
+import com.xerp.dao.tables.PojoStaffExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,6 +11,10 @@ public interface PojoStaffMapper {
     int deleteByExample(PojoStaffExample example);
 
     int deleteByPrimaryKey(Integer id);
+
+    int insert(PojoStaff record);
+
+    int insertSelective(PojoStaff record);
 
     List<PojoStaff> selectByExample(PojoStaffExample example);
 

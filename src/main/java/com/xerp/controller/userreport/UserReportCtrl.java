@@ -1,4 +1,4 @@
-package com.demo.bootstrap.controller.userreport;
+package com.xerp.controller.userreport;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.demo.bootstrap.controller.userreport.UserReportForm;
-import com.demo.bootstrap.controller.userreport.UserReportBean;
-import com.demo.bootstrap.dao.mapper.module.UserReportMapper;
+import com.xerp.controller.userreport.UserReportBean;
+import com.xerp.controller.userreport.UserReportForm;
+import com.xerp.dao.mapper.module.UserReportMapper;
 
 import base.utils.json.JsonResult;
 import base.utils.json.JsonResultFactory;

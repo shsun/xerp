@@ -62,9 +62,9 @@
 	<mvc:view-controller path="/" view-name="app.jsp"/>
 	
 	<context:component-scan base-package="base.controller" />
-	<context:component-scan base-package="com.demo.bootstrap.controller" />
+	<context:component-scan base-package="com.xerp.controller" />
 	<mvc:interceptors>
-		<bean class="com.demo.bootstrap.controller.ControllerInterceptor"></bean>
+		<bean class="com.xerp.controller.ControllerInterceptor"></bean>
 	</mvc:interceptors>	
 	
 </beans>

@@ -1,4 +1,4 @@
-package com.demo.bootstrap.dao.entity;
+package com.xerp.dao.entity;
 
 import base.dao.BaseEntity;
 

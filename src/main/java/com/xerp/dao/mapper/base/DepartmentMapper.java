@@ -1,6 +1,6 @@
-package com.demo.bootstrap.dao.mapper.base;
+package com.xerp.dao.mapper.base;
 
-import com.demo.bootstrap.dao.entity.DepartmentEty;
+import com.xerp.dao.entity.DepartmentEty;
 
 import base.dao.BaseMapper;
 

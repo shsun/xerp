@@ -26,7 +26,7 @@ public class GlobalControllerAdvice {
 	@ExceptionHandler(Exception.class)
 	public @ResponseBody void handle(Exception e, HttpServletResponse response) {
 		logger.error(e.getMessage(), e);
-		
+
 		JsonResult re = JsonResultFactory.error(e.getMessage());
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = "";

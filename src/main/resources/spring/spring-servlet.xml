@@ -1,51 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans"
-	xmlns:task="http://www.springframework.org/schema/task"
-	xsi:schemaLocation="
-		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+    http://www.springframework.org/schema/tx 
+    http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 		
-	<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></beans:bean>
-	<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-		<beans:property name="messageConverters">
-			<beans:list>
-				<beans:bean class="org.springframework.http.converter.StringHttpMessageConverter">
-					<beans:property name = "supportedMediaTypes">
-						<beans:list>
-							<beans:value>text/plain;charset=UTF-8</beans:value>
-							<beans:value>application/json;charset=UTF-8</beans:value>
-						</beans:list>
-					</beans:property>
-				</beans:bean>
-				<beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-					<beans:property name="objectMapper">
-						<beans:bean id="jacksonObjectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
-							<beans:property name="timeZone">
-								<beans:bean class="sun.util.calendar.ZoneInfo" factory-method="getTimeZone">
-							        <beans:constructor-arg type="java.lang.String" value="Asia/Shanghai"/>
-							    </beans:bean>
-							</beans:property> 
-						</beans:bean>
-					</beans:property>
-				</beans:bean>
-			</beans:list>
-		</beans:property>
-	</beans:bean>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name = "supportedMediaTypes">
+						<list>
+							<value>text/plain;charset=UTF-8</value>
+							<value>application/json;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+					<property name="objectMapper">
+						<bean id="jacksonObjectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+							<property name="timeZone">
+								<bean class="sun.util.calendar.ZoneInfo" factory-method="getTimeZone">
+							        <constructor-arg type="java.lang.String" value="Asia/Shanghai"/>
+							    </bean>
+							</property> 
+						</bean>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
 	
- 	<resources mapping="/resources/**" location="/WEB-INF/resources/" />
- 	<resources mapping="/modules/**" location="/WEB-INF/modules/" />
-	<resources mapping="/app/**" location="/WEB-INF/app/" />
-	<resources mapping="/ctrl/**" location="/WEB-INF/ctrl/" />
-	<resources mapping="/directive/**" location="/WEB-INF/directive/" />
-	<resources mapping="/templates/**" location="/WEB-INF/templates/" />
+ 	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />	
+ 	<mvc:resources mapping="/modules/**" location="/WEB-INF/modules/" />
+	<mvc:resources mapping="/app/**" location="/WEB-INF/app/" />
+	<mvc:resources mapping="/ctrl/**" location="/WEB-INF/ctrl/" />
+	<mvc:resources mapping="/directive/**" location="/WEB-INF/directive/" />
+	<mvc:resources mapping="/templates/**" location="/WEB-INF/templates/" />
 	
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-	</beans:bean>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+	</bean>
 	
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-	<beans:import resource="controllers.xml" />
-</beans:beans>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<!--
+	<import resource="controllers.xml" />
+	-->
+		
+	<mvc:view-controller path="/index" view-name="index.jsp"/>
+	<mvc:view-controller path="/login" view-name="login.jsp"/>
+	<mvc:view-controller path="/" view-name="app.jsp"/>
+	
+	<context:component-scan base-package="base.controller" />
+	<context:component-scan base-package="com.demo.bootstrap.controller" />
+	<mvc:interceptors>
+		<bean class="com.demo.bootstrap.controller.ControllerInterceptor"></bean>
+	</mvc:interceptors>	
+	
+</beans>

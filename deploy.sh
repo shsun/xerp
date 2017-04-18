@@ -20,7 +20,8 @@ killall -9 java
 echo "start tomcat"
 rm -rf ${TOMCAT_HOME}/work
 #service tomcat start
-bash ${TOMCAT_HOME}/bin/startup.sh;
+#bash ${TOMCAT_HOME}/bin/startup.sh;
+bash ${TOMCAT_HOME}/bin/catalina.sh jpda start;
 sleep 2
 echo "start tomcat done..........." 
 

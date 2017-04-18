@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" ng-app="myApp">
 	<head>
-		<title>代码生成器-web版</title>
+		<title>xerp-system</title>
 		<link rel="shortcut icon" href="${ctx}/resources/images/flow.png"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
